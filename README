@@ -1,12 +1,30 @@
 [Description]
 
-Basic python installed Debian instance.
-Debian(squeeze 32bit) + python 2.6.6
+Python installed Debian instance.
+Debian(squeeze 32bit) + python 2.6.6 (option: + virtualenv + Django 1.4)
 
-This repo is based on my another vagrant repo:
+** For Django installation **
+You may install Django in virtualenv. Please install with following steps:
+Step 1) setuptools (http://pypi.python.org/pypi/setuptools/)
+Step 2) virtualenv (http://pypi.python.org/pypi/virtualenv/)
+Step 3) django (https://www.djangoproject.com/download/)
+
+The install files are in /utils directory
+
+When starting a web server use follow command to be accessible from anywhere
+python manage.py runserver [::]:8000
+
+So you can simply run the web application from your browser
+ex. http://localhost:8999 (forwarded port)
+
+Here is a good reference url:
+http://blog.smalleycreative.com/tutorials/setup-a-django-vm-with-vagrant-virtualbox-and-chef/
+
+And this repo is based on my another vagrant repo:
 https://github.com/jas0nkim/my-vagrant-puppet-lamp
 
-[Package included]
+
+[Pre-installed Debian packages]
 
 python-debian - python 2.6.6
 curl
