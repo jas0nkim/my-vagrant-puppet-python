@@ -1,18 +1,27 @@
 [Description]
 
 Python installed Debian instance.
-Debian(squeeze 32bit) + python 2.6.6 (option: + virtualenv + Django 1.4)
+Debian(squeeze 32bit) + python 2.6.6 + pip + virtualenv + virtualenvwrapper installed
 
-** For Django installation **
-You may install Django in virtualenv. Please install with following steps:
-Step 1) setuptools (http://pypi.python.org/pypi/setuptools/)
-Step 2) virtualenv (http://pypi.python.org/pypi/virtualenv/)
-Step 3) django (https://www.djangoproject.com/download/)
+Need to create .virtualenvs directory
 
-The install files are in /utils directory
+** how to install Django **
+1) create virtualenv with wrapper
 
-When starting a web server use follow command to be accessible from anywhere
+mkvirtualenv XXX
+
+2) install Django
+
+pip install Django
+
+Keep your src in local (host) directory
+eg. ln -s /vagrant/virtualenvs/XXX/src ./src
+
+
+When starting a web server use follow command to be accessible from anywhere (expecially from host machine)
 python manage.py runserver [::]:8000
+or
+python manage.py runserver 0.0.0.0:8000
 
 So you can simply run the web application from your browser
 ex. http://localhost:8999 (forwarded port)
@@ -27,6 +36,9 @@ https://github.com/jas0nkim/my-vagrant-puppet-lamp
 [Pre-installed Debian packages]
 
 python-debian - python 2.6.6
+python-pip
+python-virtualenv
+virtualenvwrapper
 curl
 vim
 

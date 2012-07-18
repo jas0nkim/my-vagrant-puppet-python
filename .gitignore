@@ -1,4 +1,3 @@
 .vagrant
-apps
-envs
+virtualenvs
 vagrant_webroot

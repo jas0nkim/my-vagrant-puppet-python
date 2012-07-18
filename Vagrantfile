@@ -12,6 +12,6 @@ Vagrant::Config.run do |config|
     # (everything else is commented)
     # ...
 
-  # Forward guest port 80 to host port 4567 and name mapping
+  # Forward guest port 8000 to host port 8999 and name mapping
   config.vm.forward_port 8000, 8999
 end

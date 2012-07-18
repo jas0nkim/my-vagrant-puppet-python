@@ -1,11 +1,46 @@
-class apache {
+class python {
   package { "python-debian":
     ensure => present,
     require => Exec["apt-get update"]
   }
 
-  # install setuptools (for v2.6)
-  exec { "sh /vagrant/utils/setuptools/setuptools-0.6c11-py2.6.egg"
+  # install pip
+  package { "python-pip":
+    ensure => present,
     require => Package["python-debian"]
   }
+
+  package { "python-dev":
+    ensure => present,
+    require => Package["python-debian"]
+  }
+
+  package { "build-essential":
+    ensure => present,
+    require => Package["python-debian"]
+  }
+
+  # update pip
+  exec { "pip install --upgrade pip":
+    require => Package["python-pip"]
+  }
+
+  # install python virtualenv
+  package { "python-virtualenv":
+    ensure => present,
+    require => Package["python-pip"]
+  }
+
+  # install python virtualenvwrapper - virtualenv extension
+  package { "virtualenvwrapper":
+    ensure => present,
+    require => Package["python-virtualenv"]
+  }
+
+  # additional bash setting:
+  #     - set WORKON_HOME
+  #exec { "sh /vagrant/utils/scripts/custom_bashrc":
+  #  alias => "custombashrc",
+  #  require => Package["virtualenvwrapper"]
+  #}
 }
