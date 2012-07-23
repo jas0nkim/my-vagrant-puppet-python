@@ -1,3 +1,4 @@
 .vagrant
+*.pyc
 virtualenvs
 vagrant_webroot
