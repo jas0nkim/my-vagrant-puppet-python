@@ -10,6 +10,12 @@ class python {
     require => Package["python-debian", "mysql-server"]
   }
 
+  # install python-imaging
+  package { "python-imaging":
+    ensure => present,
+    require => Package["python-debian"]
+  }
+
   # install pip
   package { "python-pip":
     ensure => present,

@@ -17,6 +17,7 @@ pip install Django
 Keep your src in local (host) directory
 eg. ln -s /vagrant/virtualenvs/XXX/src ./src
 
+install mptt package from /vagrant/utils/django-mptt-0.5.2
 
 When starting a web server use follow command to be accessible from anywhere (expecially from host machine)
 python manage.py runserver [::]:8000
@@ -38,6 +39,7 @@ https://github.com/jas0nkim/my-vagrant-puppet-lamp
 mysql-server
 python-debian - python 2.6.6
 python-mysqldb
+python-imaging
 python-pip
 python-virtualenv
 virtualenvwrapper
