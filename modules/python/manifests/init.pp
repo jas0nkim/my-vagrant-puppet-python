@@ -4,6 +4,12 @@ class python {
     require => Exec["apt-get update"]
   }
 
+  # install python-mysqldb
+  package { "python-mysqldb":
+    ensure => present,
+    require => Package["python-debian", "mysql-server"]
+  }
+
   # install pip
   package { "python-pip":
     ensure => present,
@@ -21,9 +27,9 @@ class python {
   }
 
   # update pip
-  exec { "pip install --upgrade pip":
-    require => Package["python-pip"]
-  }
+  #exec { "pip install --upgrade pip":
+  #  require => Package["python-pip"]
+  #}
 
   # install python virtualenv
   package { "python-virtualenv":
@@ -44,3 +50,4 @@ class python {
   #  require => Package["virtualenvwrapper"]
   #}
 }
+

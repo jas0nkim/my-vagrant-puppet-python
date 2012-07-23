@@ -5,11 +5,11 @@ Exec {
 
 include bootstrap 
 include other
+include mysql
 include python
 
 #include apache
 #include php
 #include php::pear
 #include php::pecl
-#include mysql
 
