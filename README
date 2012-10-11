@@ -1,7 +1,7 @@
 [Description]
 
-Python installed Debian instance.
-Debian(squeeze 32bit) + python 2.6.6 + pip + virtualenv + virtualenvwrapper installed
+Python installed Ubuntu instance.
+Ubuntu 12.04 (precise 32bit) + python 2.7.3 + pip + virtualenv + virtualenvwrapper installed
 
 Need to create .virtualenvs directory
 
@@ -25,7 +25,7 @@ or
 python manage.py runserver 0.0.0.0:8000
 
 So you can simply run the web application from your browser
-ex. http://localhost:8999 (forwarded port)
+ex. http://localhost:8000 or http://127.0.0.1:8000 (forwarded port)
 
 Here is a good reference url:
 http://blog.smalleycreative.com/tutorials/setup-a-django-vm-with-vagrant-virtualbox-and-chef/
@@ -37,11 +37,11 @@ https://github.com/jas0nkim/my-vagrant-puppet-lamp
     apt-get install libapache2-mod-wsgi
     and config apache alias/virtualhost setting for your Django application
 
-[Pre-installed Debian packages]
+[Pre-installed Debian/Ubuntu packages]
 
 mysql-server
 libmysqlclient-dev
-python-debian - python 2.6.6
+python-debian - python 2.7.3
 python-mysqldb
 python-imaging
 python-pip

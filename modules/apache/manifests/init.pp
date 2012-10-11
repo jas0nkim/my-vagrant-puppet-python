@@ -13,7 +13,7 @@ class apache {
 
   file { "/etc/apache2/sites-available/vagrant_webroot":
     ensure => present,
-    source => "/vagrant/manifests/vagrant_webroot",
+    source => "/vagrant/modules/apache/vhosts/vagrant_webroot",
     require => Package["apache2"]
   }
 

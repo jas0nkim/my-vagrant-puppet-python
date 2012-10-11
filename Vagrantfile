@@ -8,7 +8,7 @@ Vagrant::Config.run do |config|
   end
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "squeeze32"
+  config.vm.box = "precise32"
     # (everything else is commented)
     # ...
 
