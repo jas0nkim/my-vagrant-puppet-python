@@ -12,6 +12,10 @@ Vagrant::Config.run do |config|
     # (everything else is commented)
     # ...
 
-  # Forward guest port 8000 to host port 8999 and name mapping
-  config.vm.forward_port 8000, 8999
+  # Forward guest port 8000 to host port 8000 and name mapping
+  config.vm.forward_port 8000, 8000
+
+  # work around 'OSError: [Errno 30] Read-only file system' issue because virtual box shared folder doesn't allow symlinks
+  #config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/SHARE_NAME", "1"]
+  config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 end

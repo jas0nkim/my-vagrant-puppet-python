@@ -33,10 +33,14 @@ http://blog.smalleycreative.com/tutorials/setup-a-django-vm-with-vagrant-virtual
 And this repo is based on my another vagrant repo:
 https://github.com/jas0nkim/my-vagrant-puppet-lamp
 
+3) install mod_wsgi for apache2 (optional)
+    apt-get install libapache2-mod-wsgi
+    and config apache alias/virtualhost setting for your Django application
 
 [Pre-installed Debian packages]
 
 mysql-server
+libmysqlclient-dev
 python-debian - python 2.6.6
 python-mysqldb
 python-imaging

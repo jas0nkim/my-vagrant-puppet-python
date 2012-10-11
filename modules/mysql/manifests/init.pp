@@ -6,6 +6,11 @@ class mysql {
     require => Exec["apt-get update"]
   }
 
+  package { "libmysqlclient-dev":
+    ensure => present,
+    require => Package["mysql-server"],
+  }
+
   service { "mysql":
     ensure => running,
     require => Package["mysql-server"],
