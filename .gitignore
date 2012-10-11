@@ -1,4 +1,4 @@
 .vagrant
 *.pyc
-virtualenvs
+Applications
 vagrant_webroot
