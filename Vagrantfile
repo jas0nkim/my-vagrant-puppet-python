@@ -12,7 +12,9 @@ Vagrant::Config.run do |config|
     # (everything else is commented)
     # ...
 
-  # Forward guest port 8000 to host port 8000 and name mapping
+  # Forward guest port 80 (apache web server) to host port 8080 and name mapping
+  config.vm.forward_port 80, 8080
+  # Forward guest port 8000 (django web server) to host port 8000 and name mapping
   config.vm.forward_port 8000, 8000
 
   # work around 'OSError: [Errno 30] Read-only file system' issue because virtual box shared folder doesn't allow symlinks
